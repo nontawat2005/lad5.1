@@ -1,6 +1,6 @@
 <?php
 require("connect_db.php");
-$sql = "SELECT * FROM course";
+$sql = "SELECT * FROM courses";
 $result = mysqli_query($conn, $sql);
 ?>
 <html>
@@ -12,12 +12,12 @@ $result = mysqli_query($conn, $sql);
 <body>
     Select Course to show
     <form action=show_exam_result.php method="get">
-        <select name="course_code">
+        <select name="courses_code">
             <?php
             while ($row = mysqli_fetch_assoc($result)) {
             ?>
-                <option value="<?php echo $row["course_code"]; ?>">
-                    <?php echo $row["course_code"]; ?> <?php echo $row["course_name"]; ?>
+                <option value="<?php echo $row["courses_code"]; ?>">
+                    <?php echo $row["courses_code"]; ?> <?php echo $row["courses_name"]; ?>
                 </option>
             <?php
             }
